@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/authentication")
+@RequestMapping("/api/authentication")
 @RequiredArgsConstructor
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
@@ -25,6 +25,7 @@ public class AuthenticationController {
 
     @PostMapping("/sign-in")
     public ResponseEntity<Object> signIn(@RequestBody User user) {
+        System.out.println("가나다");
         return new ResponseEntity<>(authenticationService.signInAndReturnJWT(user), HttpStatus.OK);
     }
 
