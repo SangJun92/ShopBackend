@@ -11,7 +11,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Set;
 
-
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,6 +28,7 @@ public class UserPrinciple implements UserDetails {
         return authorities;
     }
 
+
     @Override
     public String getPassword() {
         return password;
@@ -38,24 +38,23 @@ public class UserPrinciple implements UserDetails {
     public String getUsername() {
         return username;
     }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
     @Override
     public boolean isEnabled() {
         return true;
+    }
+    public Long getId(){
+        return id;
     }
 }
