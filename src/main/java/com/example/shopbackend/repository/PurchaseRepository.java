@@ -14,7 +14,7 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
 //            "from Purchase pur left join Product prd on prd.id = pur.productId " +
 //            "where pur.userId = :userId")
     @Query("select " +
-            "prd.name as name, pur.quantity as quantity, pur.purchaseTime as purchaseTime " +
+            "prd.name as name, prd.price as price, pur.quantity as quantity, pur.purchaseTime as purchaseTime " +
             "from Purchase pur left join Product prd on prd.id = pur.productId " +
             "where pur.userId = :userId" )
 
